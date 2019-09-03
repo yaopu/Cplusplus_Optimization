@@ -1,7 +1,9 @@
 #include <iostream>
 #include <memory>
+/// To Do List
+/// unique_ptr array
 
-int main() {
+void simple_test() {
   std::unique_ptr<int> up; // empty
   up.reset(new int);       // take ownership of pointer
   *up = 5;
@@ -14,6 +16,9 @@ int main() {
   std::cout << *up.get() << '\n'; //输出地址里的值
   up.release();                   //释放
   std::cout << up.get() << "\n";
+}
 
+int main() {
+  simple_test();
   return 0;
 }
