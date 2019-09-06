@@ -2,8 +2,8 @@
 
 ##1.STL  
 ##2 algorithm
-###2.1 sort
-####2.2.1 merget_sort (Naive finished)
+###2.1 sort  
+####2.2.1 merget_sort (Naive finished)  
  <a href="http://www.youtube.com/watch?v=CpjVucvAc3g" target="_blank">Merget sort video on youtube </a>
 ###2.2 graph  
 dijstra method 
@@ -13,7 +13,8 @@ dijstra method
 ##6.基本数据类型  
 ##7.基本数据结构  
 ##8.special notes such as nullptr and null,static  
-##9.IO
+##9.IO  
+##10.oop  
 #About me    
 
 my wechat:1417511526    
