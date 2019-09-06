@@ -1,4 +1,5 @@
 #include <iostream>
+///虚函数经典用法
 using namespace std;
 class Base {
 public:
