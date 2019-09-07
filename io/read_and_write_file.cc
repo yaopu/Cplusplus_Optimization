@@ -1,11 +1,13 @@
 /*
  *
  * 201909
- * yaoweipu@126.com
- * wechart 1417511526
+
  * ofstream：写操作，由ostream引申而来
  * ifstream：读操作，由istream引申而来
  * fstream ：同时读写操作，由iostream引申而来
+ *  yaoweipu@126.com
+ * wechart 1417511526
+ * about me https://yaopu.github.io
  */
 #include <fstream>
 #include <iostream>
@@ -50,7 +52,7 @@ static void test_fin() {
   }
 }
 
-static void test_fout() {
+static void test_fout() { //写入到文件内
   std::ofstream fout("out.txt");
 
   if (fout.is_open()) {
