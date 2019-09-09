@@ -30,7 +30,7 @@ int main() {
 
   Node *root = build_tree(arr, 0, n);
   // preorder(root);
- // inorder(root);
+  // inorder(root);
   posoder(root);
   return 0;
 }
@@ -82,3 +82,4 @@ void posoder(Node *p) {
     inorder(p);
   }
 }
+/// https://www.cnblogs.com/llhthinker/p/4906631.html
