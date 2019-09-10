@@ -1,5 +1,6 @@
 #include <iostream>
 ///虚函数经典用法
+//理解虚函数的动态绑定
 using namespace std;
 class Base {
 public:
