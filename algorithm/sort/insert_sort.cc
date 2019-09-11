@@ -8,26 +8,33 @@
 　　移动次数：(n+4)(n-1)/2
 　　所以直接插入排序的时间复杂度为O(n2)。
 */
+#include <iostream>
+using namespace std;
+void insertSort(int arr[], int n);
+int main() {
 
-int main()
-{
+  int arr[] = {1, 34, 412, 20, 8291};
+  int n = sizeof(arr) / sizeof(arr[0]);
+  insertSort(arr, n);
 
-	int arr[] = {1,34,412,20,8291};
-	int n = sizeof(arr)/sizeof(arr[0]);
-	insertSort(arr,n);
+  for (int i = 0; i < n; i++) {
+    std::cout << arr[i] << "  ";
+  }
+  std::cout << "\n";
 }
 
-void insertSort(int arr[], int n){  
-	for(int i = 1;i < n;i++){  
-		int temp = arr[i];  
-		int j = i - 1;  
-		while(temp < arr[j]){  
-			arr[j+1] = arr[j];  
-			j--;  
-			if(j == -1){  
-				break;  
-			}  
-		}  
-		arr[j+1] = temp;  
-	}  
-}  
+void insertSort(int arr[], int n) {
+  for (int i = 1; i < n; i++) { //从1开始遍历
+    int temp = arr[i];
+    int j = i - 1;
+    while (temp < arr[j]) {
+      arr[j + 1] = arr[j];
+      j--; //数组往后移动
+      if (j == -1) {
+        break;
+      }
+    }
+    arr[j + 1] = temp; //此时j==-1,j+1 =1
+                       //移动空了的位置给arr[i]
+  }
+}

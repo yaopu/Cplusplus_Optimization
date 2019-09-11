@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #define N 2
 #define M N + 1
-#define NUM (M + 1) * M / 2
+#define NUM (M + 1) * M / 2 //宏定义只是简单的文本替换
 #pragma pack(2)
 struct Test1 {
   int a;

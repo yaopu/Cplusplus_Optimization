@@ -9,6 +9,7 @@
  * wechart 1417511526
  * about me https://yaopu.github.io
  */
+// getchar()
 #include <fstream>
 #include <iostream>
 

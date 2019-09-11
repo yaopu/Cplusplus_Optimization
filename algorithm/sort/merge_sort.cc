@@ -1,31 +1,30 @@
+//递归方法实现归并排序
+//理解递归的执行过程
+// 1.每一级的递归都使用它自己的私有的变量
+// 2.栈的结构来理解
 #include <iostream>
-
 using namespace std;
-void merget_sort(); //采用递归方法实现归并排序
 void merge(int *A, int *L, int leftCount, int *R, int rightCount); //归并
-void mergesort(int *A, int n) {
+void mergesort(int *A, int n) { //传入参数，数组，数组长度
   int mid, i, *L, *R;
-  if (n < 2)
-    return;    ///如果元素少于两个，则不必排序
-  mid = n / 2; /// 寻找中间元素
-  /// 构建左右子序列
-  // mid elements (from index 0 till mid-1) should be part of left sub-array
-  // and (n-mid) elements (from mid to n-1) will be part of right sub-array
+  if (n < 2) //如果元素少于两个，递归停止条件
+    return;
+  mid = n / 2;
   L = new int[mid];
-  R = new int[n - mid];
-
-  for (i = 0; i < mid; i++)
+  for (i = 0; i < mid; i++) {
     L[i] = A[i]; // 构建左子序列
-  for (i = mid; i < n; i++)
-    R[i - mid] = A[i]; //构建右子序列
+  }
 
-  mergesort(L, mid);     // sorting the left subarray
-  mergesort(R, n - mid); // sorting the right subarray
+  R = new int[n - mid]; //构建右子序列
+  for (i = mid; i < n; i++) {
+    R[i - mid] = A[i];
+  }
 
-  merge(A, L, mid, R, n - mid); // Merging L and R into A as sorted list.
-  // the delete operations is very important
-  delete[] R;
-  delete[] L;
+  mergesort(L, mid);            //递归左  分左右
+  mergesort(R, n - mid);        //递归右
+  merge(A, L, mid, R, n - mid); // 归并.
+  delete[] R;                   //不能忘掉delete 内存
+  delete[] L;                   //不能忘掉delete内存
 }
 
 void merge(int *A, int *L, int leftCount, int *R, int rightCount) {
@@ -33,13 +32,13 @@ void merge(int *A, int *L, int leftCount, int *R, int rightCount) {
   int j = 0; // j,右子序列下标索引
   int k = 0; // k，归并完毕后的坐标索引
 
-  while (i < leftCount && j < rightCount) {
-    if (L[i] < R[j])
+  while (i < leftCount && j < rightCount) { //下标是且操作
+    if (L[i] < R[j])                        //排序
       A[k++] = L[i++];
     else
       A[k++] = R[j++];
   } //当一个序列走完了，另外一个序列还有剩余，把余下的添加到A中
-  while (i < leftCount)
+  while (i < leftCount) //剩余的往后放
     A[k++] = L[i++];
   while (j < rightCount)
     A[k++] = R[j++];
