@@ -22,6 +22,7 @@ cout << n <<endl;
 void bubble_sort(int a[],int n)
 {
     int temp;
+    int num_compare = 0;
     for(int i=0;i<n-1;i++)
     {
         for(int j=0;j<n-1-i;j++) //第二层循环
@@ -32,6 +33,9 @@ void bubble_sort(int a[],int n)
                a[j] = a[j+1];
                a[j+1] = temp;
             }
+		num_compare++;
         }
     }
+    std::cout << "num_compare_pared" << num_compare << std::endl;
+    std::cout << "array elements = " << n <<endl;
 }

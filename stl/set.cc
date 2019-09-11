@@ -18,5 +18,6 @@ int main() {
   }
   cout << a.size() << b.size() << endl;
   cout << *b.find(1); //返回的是迭代器
+  cout << *b.find(2);
   return 0;
 }
