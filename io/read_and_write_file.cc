@@ -13,6 +13,8 @@
 #include <fstream>
 #include <iostream>
 
+//string str("");
+//getline(cin,str)
 namespace IO {
 static void test_cin_cout() {
   int i;
@@ -57,7 +59,6 @@ static void test_fout() { //写入到文件内
   std::ofstream fout("out.txt");
 
   if (fout.is_open()) {
-
     std::string str;
     str = " I love Mace";
     fout << str;

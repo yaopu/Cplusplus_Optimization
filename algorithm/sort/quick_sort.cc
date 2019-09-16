@@ -11,20 +11,20 @@ int main() {
   std::cout << "\n";
 }
 
-void quickSort(int *arr, int l, int r) { //输入参数
+void quickSort(int *arr, int lelf, int right) { //输入参数
+  //升序排列
   int i, j, temp;
-  if (l < r) {
-    i = l;
-    j = r;
-    int x = arr[(l + r) / 2]; //
-    //以中间元素为轴
+  if (lelf < right) {
+    i = lelf;
+    j = right;
+    int x = arr[(lelf + right) / 2]; // x为中间值
     bool flag = true;
     while (flag) {
-      while (i <= r && arr[i] < x) {
-        i++;
+      while (i <= right && arr[i] < x) {
+        i++; //左边的往右边走，找到大于x的元素
       }
       while (j >= 0 && arr[j] > x) {
-        j--;
+        j--; //右边往左边走，找到小于x的元素
       }
       if (i >= j) //相遇则跳出
       {
@@ -33,10 +33,10 @@ void quickSort(int *arr, int l, int r) { //输入参数
         temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-        //交换
+        //交换这两个元素
       }
     }
-    quickSort(arr, l, i - 1); //对左半部分进行快排
-    quickSort(arr, j + 1, r); //对右半部分进行快排
+    quickSort(arr, lelf, i - 1); //对左半部分进行快排，输入参数形式
+    quickSort(arr, j + 1, right); //对右半部分进行快排,输入参数形式
   }
 }

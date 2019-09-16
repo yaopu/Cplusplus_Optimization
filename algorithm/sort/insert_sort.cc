@@ -26,8 +26,8 @@ int main() {
 void insertSort(int arr[], int n) {
   for (int i = 1; i < n; i++) { //从1开始遍历
     int temp = arr[i];
-    int j = i - 1;
-    while (temp < arr[j]) {
+    int j = i - 1;          //起始位置
+    while (temp < arr[j]) { //思考，如何挪动？
       arr[j + 1] = arr[j];
       j--; //数组往后移动
       if (j == -1) {
