@@ -23,11 +23,9 @@ int main() {
   int n = pow(2, depth) - 1;
   total_leaves = n;
   arr = (int *)malloc(n * sizeof(int));
-
   for (int i = 0; i < n; i++) {
     arr[i] = i;
   }
-
   Node *root = build_tree(arr, 0, n);
   // preorder(root);
   // inorder(root);
@@ -36,7 +34,6 @@ int main() {
 }
 
 Node *build_tree(int *arr, int i, int m) {
-
   Node *p;
   if (i >= m) {
     return NULL;
@@ -45,7 +42,6 @@ Node *build_tree(int *arr, int i, int m) {
   p->value = arr[i];                /// root
   p->left = build_tree(arr, 2 * i + 1, m);
   p->right = build_tree(arr, 2 * i + 2, m);
-
   return p;
 }
 
@@ -75,7 +71,6 @@ void inorder(Node *p) //中序遍历
 
 void posoder(Node *p) {
   if (p) {
-
     posoder(p->left);
     cout << p->value;
     cout << "  ----->";
