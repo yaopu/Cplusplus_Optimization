@@ -56,18 +56,18 @@ void test_map_int_string() {
 
 void test_insert_and_see_sort() {
   map<int, string> dict;
-
   pair<int, string> pair1(1, "me");
   pair<int, string> pair2(2, "feng");
   pair<int, string> pair3(3, "xia");
   dict.insert(pair1);
   dict.insert(pair3);
   dict.insert(pair2);
-
   map<int, string>::iterator it = dict.begin();
   for (; it != dict.end(); ++it)
     cout << it->first << "  " << it->second << endl;
 }
+
+
 
 int main() {
   // test_map_int_string();
