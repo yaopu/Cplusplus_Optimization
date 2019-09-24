@@ -31,5 +31,13 @@ int main() {
     cout << *it++ << endl;
   }
 
+  /// vector在resize时是原来的多少倍？
+  //
+  p.resize(10);
+  it = p.begin();
+  while (it != p.end()) {
+    cout << *it++ << endl;
+  }
+
   return 0;
 }

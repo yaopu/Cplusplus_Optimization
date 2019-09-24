@@ -10,7 +10,6 @@ int main() {
   }
 
   map<int, int>::iterator it = A.begin();
-
   while (A.size() != 0) {
     cout << it->first << " ";
     cout << it->second << endl;

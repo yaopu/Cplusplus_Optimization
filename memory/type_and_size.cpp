@@ -33,6 +33,7 @@ struct C {
 using namespace std;
 int main() {
   cout << NUM << endl;
+  printf("sizeof(1) = %d\n",sizeof(1));
   printf("sizeof(int) = %d\n", sizeof(int));
   printf("sizeof(float)=%d\n", sizeof(float));
   printf("sizeof(char)=%d\n", sizeof(char));
