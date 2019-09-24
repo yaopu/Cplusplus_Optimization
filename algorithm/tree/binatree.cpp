@@ -11,6 +11,7 @@ struct Node {
   Node *right;
 };
 
+//前，中，后，层
 int *arr;
 int count = 0;
 int total_leaves;
