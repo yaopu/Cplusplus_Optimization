@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 void quickSort(int *, int, int);
 int main() {
 
@@ -26,7 +27,7 @@ void quickSort(int *arr, int lelf, int right) { //输入参数
       while (j >= 0 && arr[j] > x) {
         j--; //右边往左边走，找到小于x的元素
       }
-      if (i >= j) //相遇则跳出
+      if (i >= j) // 3)相遇则跳出
       {
         flag = false;
       } else {

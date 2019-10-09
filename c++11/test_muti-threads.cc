@@ -4,12 +4,9 @@
 #include <algorithm>
  
 using namespace std;
- 
 static const int64_t MAX_THREAD_NUM = 128;
- 
 static int64_t n          = 0;
 static int64_t loop_count = 0;
- 
 #pragma pack (1)
 struct data
 {
@@ -17,10 +14,8 @@ struct data
   int64_t v;
 };
 #pragma pack ()
- 
 static data value __attribute__((aligned(64)));
 static int64_t counter[MAX_THREAD_NUM];
- 
 void worker(int *cnt)
 {
   for (int64_t i = 0; i < loop_count; ++i) {
@@ -53,16 +48,13 @@ int main(int argc, char *argv[])
   for (int64_t i = 0L; i < n; ++i) {
     pthread_create(&threads[i], NULL, (void* (*)(void*))worker, &counter[i]);
   }
- 
   int64_t count = 0L;
   for (int64_t i = 0L; i < n; ++i) {
     pthread_join(threads[i], NULL);
     count += counter[i];
   }
- 
   printf("data size: %lu\n", sizeof(value));
   printf("data addr: %lX\n", (unsigned long)&value.v);
   printf("final: %016lX\n", value.v);
- 
   return 0;
 }
